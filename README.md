@@ -16,4 +16,24 @@ This project aims to build a small interpreter for a toy ML-like language. The l
 - Hindley–Milner type inference with `let` polymorphism
 - Call-by-value evaluation strategy
 
-The entire system is implemented in OCaml. The front end compiles TestML code to S-expressions and the back end runs those expressions using a minimalist Lisp interpreter. A small REPL is planned for interactive testing.
+The entire system is implemented in OCaml. The front end will eventually compile
+TestML code to S-expressions, which are then evaluated by a minimalist Lisp
+interpreter. A small REPL is planned for interactive testing.  At this early
+stage only the S-expression interpreter is available.
+
+## Building
+
+The project uses `dune` for building.  To compile the interpreter run:
+
+```bash
+dune build
+```
+
+You can then execute the interpreter with:
+
+```bash
+dune exec testml "( + 1 2 )"
+```
+
+Without a command line argument the program starts a very small REPL that reads
+a single S-expression from standard input.
